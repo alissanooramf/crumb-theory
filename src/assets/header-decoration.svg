@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 44" fill="none" width="260" height="44">
+  <!-- Left flourish line -->
+  <path d="M2 22 Q 30 8, 58 22 Q 86 36, 114 22" stroke="#c8a98a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <!-- Right flourish line -->
+  <path d="M146 22 Q 174 8, 202 22 Q 230 36, 258 22" stroke="#c8a98a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+
+  <!-- Whisk handle -->
+  <line x1="130" y1="42" x2="130" y2="26" stroke="#9c6e3c" stroke-width="2" stroke-linecap="round"/>
+  <!-- Whisk head loop outer -->
+  <ellipse cx="130" cy="20" rx="9" ry="7" stroke="#9c6e3c" stroke-width="1.6" fill="none"/>
+  <!-- Whisk wires -->
+  <path d="M122 20 Q 126 12, 130 10 Q 134 12, 138 20" stroke="#9c6e3c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M122 20 Q 126 28, 130 30 Q 134 28, 138 20" stroke="#9c6e3c" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <path d="M125 14 Q 130 10, 135 14" stroke="#9c6e3c" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <path d="M125 26 Q 130 30, 135 26" stroke="#9c6e3c" stroke-width="1" fill="none" stroke-linecap="round"/>
+  <!-- Centre wire -->
+  <line x1="130" y1="10" x2="130" y2="30" stroke="#9c6e3c" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Small dots flanking the whisk -->
+  <circle cx="116" cy="22" r="1.5" fill="#c8a98a"/>
+  <circle cx="144" cy="22" r="1.5" fill="#c8a98a"/>
+  <circle cx="108" cy="19" r="1" fill="#d4b896"/>
+  <circle cx="152" cy="19" r="1" fill="#d4b896"/>
+</svg>
