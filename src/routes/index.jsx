@@ -214,7 +214,7 @@ function LittleIndulgencesCard() {
 
 function PlaceAnOrderCard() {
   return (
-    <div className="order-card-v2" id="order">
+    <div className="order-card-v2">
       <div className="order-botanical order-botanical-left" aria-hidden="true">
         <svg width="60" height="130" viewBox="0 0 60 130" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M30 120 C30 80 10 60 10 30" stroke="#C58B55" strokeWidth="1" strokeLinecap="round" opacity="0.5"/>
@@ -284,32 +284,38 @@ function WheatIcon() {
   );
 }
 
-function CupcakeIcon() {
+function RealIngredientsIcon() {
   return (
     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M11 18H25L23 30H13L11 18Z" stroke="#51250F" strokeWidth="1.2" fill="none" strokeLinejoin="round" />
-      <path d="M10 18C10 13 13 9 18 8C23 9 26 13 26 18" stroke="#51250F" strokeWidth="1.2" fill="none" strokeLinecap="round" />
-      <path d="M12 18C14 16 16 17 18 15.5C20 17 22 16 24 18" stroke="#51250F" strokeWidth="1" fill="none" strokeLinecap="round" />
-      <circle cx="18" cy="7" r="1.2" fill="#51250F" />
+      {/* Farm fresh egg silhouette */}
+      <path
+        d="M18 5.5 C12.5 5.5 8 13.5 8 21.5 C8 27 12.2 31 18 31 C23.8 31 28 27 28 21.5 C28 13.5 23.5 5.5 18 5.5 Z"
+        stroke="#51250F"
+        strokeWidth="1.2"
+        fill="none"
+      />
+      {/* Gentle organic botanical leaf/sprig inside indicating 100% natural pure ingredients */}
+      <path d="M18 27 V14" stroke="#51250F" strokeWidth="1.1" strokeLinecap="round" />
+      <path d="M18 22 C14.5 20.5 13 18 13.5 15.5 C15.5 15.5 17 18 18 22 Z" fill="#51250F" opacity="0.85" />
+      <path d="M18 17 C21.5 15.5 23 13 22.5 10.5 C20.5 10.5 19 13 18 17 Z" fill="#51250F" opacity="0.85" />
+      <circle cx="18" cy="11.5" r="1.2" fill="#51250F" />
     </svg>
   );
 }
 
-function FreshlyBakedIcon() {
+function SmallBatchesIcon() {
   return (
     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Delicate aroma/steam wisps rising from fresh bake */}
-      <path d="M13.5 8 C12.5 6.2 14.5 4.8 13.5 3" stroke="#51250F" strokeWidth="1.1" strokeLinecap="round" opacity="0.8" />
-      <path d="M18 8.5 C17 6.5 19 5 18 3" stroke="#51250F" strokeWidth="1.2" strokeLinecap="round" opacity="0.9" />
-      <path d="M22.5 8 C21.5 6.2 23.5 4.8 22.5 3" stroke="#51250F" strokeWidth="1.1" strokeLinecap="round" opacity="0.8" />
-      {/* Crusty artisan bread loaf dome */}
-      <path d="M7 26 C7.5 16.5 11.5 12 18 12 C24.5 12 28.5 16.5 29 26 Z" stroke="#51250F" strokeWidth="1.2" fill="none" strokeLinejoin="round" />
-      {/* Baker's decorative scoring cuts on crust */}
-      <path d="M12.5 18 C14 16 15.5 14.8 17 14" stroke="#51250F" strokeWidth="1.1" strokeLinecap="round" opacity="0.85" />
-      <path d="M18.5 21.5 C20 19 21.5 17.5 23 16.5" stroke="#51250F" strokeWidth="1.1" strokeLinecap="round" opacity="0.85" />
-      <path d="M11 22.5 C12.2 21 13.5 20 14.8 19.5" stroke="#51250F" strokeWidth="1" strokeLinecap="round" opacity="0.75" />
-      {/* Loaf base */}
-      <line x1="6" y1="26" x2="30" y2="26" stroke="#51250F" strokeWidth="1.3" strokeLinecap="round" />
+      {/* Small-batch artisan baking tin / cup */}
+      <path d="M11 17 H25 L23.5 29.5 H12.5 L11 17 Z" stroke="#51250F" strokeWidth="1.2" fill="none" strokeLinejoin="round" />
+      {/* Gentle batch rise */}
+      <path d="M9.5 17 C9.5 12 13 8 18 8 C23 8 26.5 12 26.5 17" stroke="#51250F" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+      {/* Hand-whisked swirl */}
+      <path d="M12 17 C14 15 16 16 18 14.5 C20 16 22 15 24 17" stroke="#51250F" strokeWidth="1" fill="none" strokeLinecap="round" />
+      {/* Little batch accent */}
+      <path d="M18 4 V6.5" stroke="#51250F" strokeWidth="1.1" strokeLinecap="round" />
+      <path d="M14.5 5 C14.8 5.8 14.8 6.5 14.2 7.2" stroke="#51250F" strokeWidth="0.9" strokeLinecap="round" opacity="0.8" />
+      <path d="M21.5 5 C21.2 5.8 21.2 6.5 21.8 7.2" stroke="#51250F" strokeWidth="0.9" strokeLinecap="round" opacity="0.8" />
     </svg>
   );
 }
@@ -426,27 +432,31 @@ function Index() {
         </div>
         <div className="hero-bottom-divider" aria-hidden="true"></div>
       </section>
+
       <section className="values-strip" aria-label="Our bakery values">
         <div className="values-line-left" aria-hidden="true"></div>
         <div className="values-items">
           <div className="values-item">
             <WheatIcon />
-            <span>No Maida</span>
+            <span>NO MAIDA</span>
           </div>
           <div className="values-dot" aria-hidden="true">•</div>
           <div className="values-item">
-            <CupcakeIcon />
-            <span>Baked in Small Batches</span>
+            <RealIngredientsIcon />
+            <span>REAL INGREDIENTS</span>
           </div>
           <div className="values-dot" aria-hidden="true">•</div>
           <div className="values-item">
-            <FreshlyBakedIcon />
-            <span>Freshly Baked</span>
+            <SmallBatchesIcon />
+            <span>BAKED IN SMALL BATCHES</span>
           </div>
         </div>
         <div className="values-line-right" aria-hidden="true"></div>
       </section>
+
       <BakerySeparator />
+
+      {/* ─── MENU SECTION ─── */}
       <section className="menu-section-v2" id="menu">
         <div className="menu-header-v2">
           <div className="menu-header-deco menu-header-deco-left" aria-hidden="true">
@@ -470,23 +480,31 @@ function Index() {
             </svg>
           </div>
         </div>
-        <div className="menu-grid-v2">
-          <div className="menu-col-v2">
+
+        <div className="menu-container-v2">
+          {/* 1. Little Indulgences: Independent card placed first */}
+          <LittleIndulgencesCard />
+
+          {/* 2 & 3. Brownies & Blondies (left) and Cakes (right): Equal outer widths, extended horizontally */}
+          <div className="menu-columns-v2">
             <MenuCard
               title="Brownies & Blondies"
               items={brownies}
               notice="♡ Frosted versions of Fudgy Brownies, Blondies & Mocha Brownies available for +₹50 ♡"
             />
-            <LittleIndulgencesCard />
-          </div>
-          <div className="menu-col-v2">
             <MenuCard title="Cakes" items={cakes} />
-            <PlaceAnOrderCard />
           </div>
         </div>
       </section>
+
+      {/* ─── PLACE AN ORDER: Separate independent full-width section outside the menu ─── */}
+      <section className="order-section-standalone" id="order" aria-label="Place an order">
+        <div className="order-container-v2">
+          <PlaceAnOrderCard />
+        </div>
+      </section>
       <footer className="footer-v2">
-        <div className="footer-scallop" aria-hidden="true" style={{background:"#F8EBD9"}}>
+        <div className="footer-scallop" aria-hidden="true" style={{background:"var(--ct-ivory)"}}>
           <svg viewBox="0 0 1440 36" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style={{display:"block"}}>
             <path d="M0,36 C60,18 120,0 180,18 C240,36 300,18 360,9 C420,0 480,18 540,27 C600,36 660,18 720,9 C780,0 840,18 900,27 C960,36 1020,18 1080,9 C1140,0 1200,18 1260,27 C1320,36 1380,18 1440,9 L1440,36 Z" fill="#51250F"/>
           </svg>
