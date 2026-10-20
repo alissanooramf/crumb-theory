@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, Mail, Phone } from "lucide-react";
 import bakeryLineup from "@/assets/bakery-lineup.png";
+import chocoCrunchSvg from "@/assets/choco-crunch.svg";
 import crumbTheoryLogo from "@/assets/crumb-theory-logo.png";
 import crumbTheoryLogoCream from "@/assets/crumb-theory-logo-cream.png";
-import headerDecoration from "@/assets/header-decoration.svg";
 import heroBakeryPhoto from "@/assets/hero-bakery-photo.jpg";
 
 export const Route = createFileRoute("/")({
@@ -33,6 +33,7 @@ const brownies = [
     prices: [
       ["250g", "₹350"],
       ["500g", "₹600"],
+      ["1kg", "₹1,100"],
     ],
     imagePosition: "5% center",
   },
@@ -42,6 +43,7 @@ const brownies = [
     prices: [
       ["250g", "₹350"],
       ["500g", "₹600"],
+      ["1kg", "₹1,100"],
     ],
     imagePosition: "35% center",
   },
@@ -63,6 +65,16 @@ const brownies = [
       ["500g", "₹700"],
     ],
     imagePosition: "66% center",
+  },
+  {
+    name: "Loaded Blondies",
+    description:
+      "Buttery blondies topped with rich chocolate ganache and premium chocolates, made for every celebration.",
+    prices: [
+      ["250g", "₹450"],
+      ["500g", "₹700"],
+    ],
+    imagePosition: "35% center",
   },
   {
     name: "Kinder Brownie Tub",
@@ -116,15 +128,30 @@ const cakes = [
   },
 ];
 
+const littleIndulgences = [
+  {
+    name: "Assorted Biscuit Box",
+    description: "A delightful selection of our finest handmade biscuits.",
+    quantityLabel: "Qty",
+    prices: [["Box of 12", "₹400"]],
+    imagePosition: "85% center",
+  },
+  {
+    name: "Choco Fruit-Nut Crunch",
+    description:
+      "Long finger-shaped chocolate crunches packed with a delightful mix of dry fruits and nuts.",
+    quantityLabel: "Qty",
+    prices: [["10 pcs", "₹250"]],
+    customImage: chocoCrunchSvg,
+  },
+];
+
 function Header() {
   return (
     <header className="site-header">
       <a className="mini-logo" href="#home" aria-label="Crumb Theory home">
         <img src={crumbTheoryLogo} alt="Crumb Theory — Made With Love" />
       </a>
-      <div className="header-deco-wrap" aria-hidden="true">
-        <img className="header-deco" src={headerDecoration} alt="" />
-      </div>
       <nav aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#menu">Menu</a>
@@ -134,11 +161,20 @@ function Header() {
   );
 }
 
-function MenuItemRow({ item }) {
+function MenuItemRow({ item, defaultQuantityLabel = "Grams" }) {
+  const imgSrc = item.customImage || bakeryLineup;
   return (
     <article className="menu-item-v2">
       <div className="item-pic-v2" aria-hidden="true">
-        <img src={bakeryLineup} alt="" style={{ objectPosition: item.imagePosition || "center center" }} />
+        <img
+          src={imgSrc}
+          alt=""
+          style={{
+            objectPosition: item.imagePosition || "center center",
+            objectFit: item.customImage ? "contain" : "cover",
+            padding: item.customImage ? "3px" : "0",
+          }}
+        />
       </div>
       <div className="item-copy-v2">
         <h4>{item.name}</h4>
@@ -146,7 +182,7 @@ function MenuItemRow({ item }) {
       </div>
       <div className="price-table-v2">
         <div className="price-head-v2">
-          <span>Grams</span>
+          <span>{item.quantityLabel || defaultQuantityLabel}</span>
           <span>Price</span>
         </div>
         {item.prices.map(([size, price]) => (
@@ -187,26 +223,10 @@ function LittleIndulgencesCard() {
         <h3>Little Indulgences</h3>
         <span className="menu-title-line" />
       </div>
-      <div className="little-indulgences-body">
-        <article className="menu-item-v2">
-          <div className="item-pic-v2" aria-hidden="true">
-            <img src={bakeryLineup} alt="" style={{ objectPosition: "85% center" }} />
-          </div>
-          <div className="item-copy-v2">
-            <h4>Assorted Biscuit Box</h4>
-            <p>A delightful selection of our finest handmade biscuits.</p>
-          </div>
-          <div className="price-table-v2">
-            <div className="price-head-v2">
-              <span>Grams</span>
-              <span>Price</span>
-            </div>
-            <div className="price-row-v2">
-              <span>Box of 12</span>
-              <strong>₹400</strong>
-            </div>
-          </div>
-        </article>
+      <div className="little-indulgences-items">
+        {littleIndulgences.map((item) => (
+          <MenuItemRow key={item.name} item={item} defaultQuantityLabel="Qty" />
+        ))}
       </div>
     </div>
   );
@@ -482,10 +502,7 @@ function Index() {
         </div>
 
         <div className="menu-container-v2">
-          {/* 1. Little Indulgences: Independent card placed first */}
-          <LittleIndulgencesCard />
-
-          {/* 2 & 3. Brownies & Blondies (left) and Cakes (right): Equal outer widths, extended horizontally */}
+          {/* Top: Brownies & Blondies (left) and Cakes (right) side by side */}
           <div className="menu-columns-v2">
             <MenuCard
               title="Brownies & Blondies"
@@ -494,6 +511,9 @@ function Index() {
             />
             <MenuCard title="Cakes" items={cakes} />
           </div>
+
+          {/* Below both columns: Little Indulgences spanning full width */}
+          <LittleIndulgencesCard />
         </div>
       </section>
 

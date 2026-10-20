@@ -83,22 +83,6 @@ a {
   border-bottom: 2px dotted var(--ct-caramel);
 }
 
-/* Decorative ornament – centred */
-.header-deco-wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-}
-.header-deco {
-  width: 220px;
-  height: 40px;
-  opacity: 0.6;
-  display: block;
-}
-
 /* Logo – left */
 .mini-logo {
   display: block;
@@ -652,9 +636,6 @@ footer small {
     font-size: 11.5px;
     letter-spacing: 1.5px;
   }
-  .header-deco-wrap {
-    display: none;
-  }
 
   /* Hero stacks vertically */
   .hero-new-inner {
@@ -815,9 +796,12 @@ footer small {
 }
 .menu-title-v2 {
   margin: 0;
-  font: italic 30px Georgia, serif;
+  font-family: "Great Vibes", cursive;
+  font-size: 40px;
+  font-weight: 400;
   color: var(--ct-chocolate);
   line-height: 1.15;
+  text-align: center;
 }
 .menu-header-deco {
   flex-shrink: 0;
@@ -841,26 +825,12 @@ footer small {
   width: 100%;
 }
 
-/* ── Little Indulgences Card: Independent menu card placed first ── */
-.little-indulgences-card {
-  width: 100%;
-  padding: 26px 32px 22px;
-}
-.little-indulgences-body {
-  padding: 10px 0 4px;
-}
-.little-indulgences-card .menu-item-v2 {
-  border-top: none;
-  padding: 10px 0;
-  flex: none;
-}
-
 /* ── Two-column grid for Brownies & Cakes (Extended width, equal balanced widths) ── */
 .menu-columns-v2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  align-items: stretch;
+  align-items: start;
   width: 100%;
 }
 
@@ -870,11 +840,10 @@ footer small {
   border-radius: 16px;
   border: 1px solid var(--ct-border);
   box-shadow: 0 6px 20px color-mix(in oklch, var(--ct-chocolate) 6%, transparent);
-  padding: 28px 30px 22px;
+  padding: 24px 28px 20px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
   box-sizing: border-box;
 }
 
@@ -916,16 +885,15 @@ footer small {
 /* ── Product row ── */
 .menu-item-v2 {
   display: grid;
-  grid-template-columns: 60px 1fr auto;
+  grid-template-columns: 58px 1fr auto;
   gap: 16px;
   align-items: center;
   border-top: 1px dotted var(--ct-border);
-  padding: 16px 0;
+  padding: 12px 0;
   min-height: 0;
-  flex: 1;
 }
 .cakes-card .menu-item-v2 {
-  padding: 17px 0;
+  padding: 14px 0;
 }
 .item-pic-v2 {
   width: 58px;
@@ -945,21 +913,21 @@ footer small {
   min-width: 0;
 }
 .item-copy-v2 h4 {
-  margin: 0 0 4px;
-  font: 600 15px Georgia, serif;
+  margin: 0 0 3px;
+  font: 600 14.5px Georgia, serif;
   color: var(--ct-chocolate);
   line-height: 1.3;
 }
 .item-copy-v2 p {
   margin: 0;
   color: var(--ct-brown-sec);
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 12.5px;
+  line-height: 1.5;
 }
 .price-table-v2 {
   flex-shrink: 0;
   text-align: right;
-  min-width: 105px;
+  min-width: 112px;
 }
 .price-head-v2 {
   display: grid;
@@ -967,10 +935,10 @@ footer small {
   gap: 8px;
   color: var(--ct-caramel);
   text-transform: uppercase;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.8px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   text-align: center;
 }
 .price-row-v2 {
@@ -979,8 +947,11 @@ footer small {
   gap: 8px;
   text-align: center;
   color: var(--ct-brown-sec);
-  font-size: 13.5px;
-  margin-bottom: 4px;
+  font-size: 13px;
+  margin-bottom: 2.5px;
+}
+.price-row-v2:last-child {
+  margin-bottom: 0;
 }
 .price-row-v2 strong {
   color: var(--ct-chocolate);
@@ -989,17 +960,33 @@ footer small {
 
 /* Notice bar */
 .notice-v2 {
-  margin: 16px -30px -22px;
-  padding: 12px 18px;
+  margin: 14px -28px -20px;
+  padding: 11px 16px;
   color: var(--ct-chocolate);
   background: #F8EBD9;
   border-top: 1px solid var(--ct-border);
   text-align: center;
   font-family: Georgia, serif;
-  font-size: 13px;
+  font-size: 12.5px;
   line-height: 1.5;
   border-radius: 0 0 15px 15px;
   flex-shrink: 0;
+}
+
+/* ── Little Indulgences Card: Independent menu card placed below ── */
+.little-indulgences-card {
+  width: 100%;
+  padding: 24px 28px 20px;
+}
+.little-indulgences-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 6px;
+}
+.little-indulgences-items .menu-item-v2 {
+  border-top: none;
+  padding: 8px 0;
 }
 
 /* ═══════════════════════════════════════════
@@ -1275,7 +1262,7 @@ footer small {
     display: none;
   }
   .menu-title-v2 {
-    font-size: 26px;
+    font-size: 34px;
   }
   .menu-container-v2 {
     gap: 16px;
@@ -1331,8 +1318,14 @@ footer small {
     padding: 20px 18px 16px;
     height: auto;
   }
-  .little-indulgences-body {
-    padding: 8px 0;
+  .little-indulgences-items {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .little-indulgences-items .menu-item-v2:not(:first-child) {
+    border-top: 1px dotted var(--ct-border);
+    padding-top: 12px;
+    margin-top: 4px;
   }
   .order-section-standalone {
     padding: 36px 14px 48px;
